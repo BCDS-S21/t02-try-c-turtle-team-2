@@ -1,4 +1,4 @@
- /* File:   main_CTurtle.cpp
+/* File:   main_CTurtle.cpp
  * Original Author:  Jesse W. Walker with modifications by Jan Pearce, 2019
  * Modified by: FIXME
  */
@@ -10,23 +10,25 @@ using namespace std; //this makes it possible to use cin and cout without std::
 
 
 int main() {
-	
-  ct::TurtleScreen scr;
-  scr.tracer(0);//disable animation
-  ct::Turtle turtle(scr);
-  turtle.speed(ct::TS_FASTEST);
-  turtle.penup();
+	ct::TurtleScreen scr;
 
+	scr.bgcolor({ "white" });
+	ct::Turtle turtle(scr);
 
-    turtle.begin_fill();
-    turtle.fillcolor({"red"});
-
-    for(int i = 0; i < 8; i++){
-      turtle.right(45);
-      turtle.forward(50);
-    }
-	
-    turtle.end_fill();
+	turtle.speed(ct::TS_SLOWEST);
+	turtle.fillcolor({ "purple" });
+	turtle.begin_fill();
+	for (int i = 0; i < 4; i++) {
+		turtle.forward(50);
+		turtle.right(90);
+	}
+	turtle.end_fill();
+	turtle.penup();
+	turtle.hideturtle();
+	turtle.forward(100);
+	turtle.pendown();
+	turtle.fillcolor({ "blue" });
+	turtle.write("I love Data Structures!");
 
 
 	scr.exitonclick();  //exists graphics screen
