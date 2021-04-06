@@ -16,17 +16,24 @@ int main() {
   ct::Turtle turtle(scr);
   turtle.speed(ct::TS_FASTEST);
   turtle.penup();
-
+  
 
     turtle.begin_fill();
     turtle.fillcolor({"red"});
 
     for(int i = 0; i < 8; i++){
       turtle.right(45);
-      turtle.forward(50);
+      turtle.forward(100);
     }
 	
     turtle.end_fill();
+    turtle.penup();
+	  turtle.hideturtle();
+	  turtle.forward(-100);
+    turtle.right(90);
+	  turtle.pendown();
+	  turtle.fillcolor({"black"});
+	  turtle.write("\n \n \n We love Data Structures! \n Please stop giving us \n reading assignments! \n Caleb \n Luis \n Sierra");
 
 
 	scr.exitonclick();  //exists graphics screen
